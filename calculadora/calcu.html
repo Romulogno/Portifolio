@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        body{
+            background-color: rgba(255, 255, 224, 0.692);
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            display: flex;
+            
+            
+        }
+
+        .cal{
+            background-color: white;
+            margin: 100px auto;
+            border: 2px solid #d8d7d7;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.315);
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            flex-direction: row-reverse;
+            border-radius: 5px;
+        }
+
+        .square {
+            
+            font-size: 15pt;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px 20px;
+            margin: 10px;
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.034);
+            background-color: white;
+            color: rgba(0, 0, 0, 0.603);
+            border: 1px solid #e7e7e7;
+            border-radius: 2px;
+        }
+
+        .display{
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.034);
+            border: 1px solid rgba(0, 0, 0, 0.11);
+            width: 100%;
+            height: 25px;
+            padding: 10px 20px;
+            margin: 10px;
+            font-family: monospace;
+            font-size: 18pt;
+            text-align: right;
+        }
+
+        .square:hover {
+            background-color: #e7e7e7;
+            }
+
+        .square:active {
+            background-color:#cfcece;;
+            transform: translateY(2px);
+        }
+    </style>
+
+</head>
+<body>
+    
+<div class="container">
+    <div class="cal">
+        <div class="display" id="tela"></div>
+        
+            <div class="square" onclick="somar()">+</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">9</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">8</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">7</div>
+            <!-- /.square -->
+      
+            <div class="square" onclick="subtrair()">-</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">6</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">5</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">4</div>
+            <!-- /.square -->
+       
+            <div class="square" onclick="multiplicar()">X</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">3</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">2</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">1</div>
+            <!-- /.square -->
+       
+            <div class="square" onclick="dividir()">/</div>
+            <!-- /.square -->
+            <div class="square" onclick="resultado()">=</div>
+            <!-- /.square -->
+            <div class="square" onclick="armazenar(this.innerHTML)">0</div>
+            <!-- /.square -->
+            <div class="square" onclick="limpar()">C</div>
+    </div>
+</div>
+
+<script>
+    
+   
+    var numeros = new Array;
+    count = 0
+    var sum = ''
+    var soma1 = ''
+    var soma2 = ''
+    var plus = '+'
+    var minus = '-'
+    var times = '*'
+    var split = '/'
+    var operador = ''
+
+    //Armazena os numeros no array
+    function armazenar(valor){
+        var display = document.getElementById('tela')
+        numeros.push(valor)
+        console.log(numeros)        
+        display.innerHTML += numeros[count]
+        
+        sum = sum + numeros[count]
+        count++
+        console.log(sum)
+    }
+    // armazena o primeiro valor na variavel e adiciona a operacao a ser feita
+    function somar(){
+        soma1 = sum;
+        operador = plus
+        console.log(soma1);
+        console.log('operador ' + operador);
+        limpar();
+    }
+
+    function subtrair(){
+        soma1 = sum;
+        operador = minus
+        console.log(soma1);
+        console.log('operador ' + operador);
+        limpar();
+    }
+
+    function multiplicar(){
+        soma1 = sum;
+        operador = times
+        console.log(soma1);
+        console.log('operador ' + operador);
+        limpar();
+    }
+
+    function dividir(){
+        soma1 = sum;
+        operador = split
+        console.log(soma1);
+        console.log('operador ' + operador);
+        limpar();
+    }
+
+
+    function resultado(){
+        res = 0
+        soma2 = sum;
+        soma1num = Number(soma1)    
+        soma2num = Number(soma2)
+        if (operador == '+') {
+            res = soma1num + soma2num
+        } if (operador == '-'){
+            res = soma1num - soma2num
+        } if (operador == '*'){
+            res = soma1num * soma2num
+        } if (operador == '/'){
+            res = soma1num / soma2num
+        }
+        document.getElementById('tela').innerHTML = res
+        while (numeros.length > 0){
+            numeros.pop()
+        }
+        
+        numeros.push(res)
+    }
+
+    // limpa o array de numeros e o campo de display
+    function limpar(){
+        while (numeros.length > 0){
+            numeros.pop()
+        }
+        var display = document.getElementById('tela');
+        display.innerHTML = ''
+        count = 0
+        sum = ''
+    }
+
+</script>
+
+</body>
+</html>

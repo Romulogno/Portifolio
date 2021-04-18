@@ -1,0 +1,108 @@
+<html>
+
+<head>
+    <title>
+        Imersão Dev - Aula 03
+    </title>
+
+    <style>
+        body {
+    font-family: 'Roboto Mono',monospace;
+    min-height: 600px;
+    background-image: url('https://www.alura.com.br/assets/img/imersoes/dev-2021/dia-03-mentalista.png');
+    background-color: #000000;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .page-title {
+    color: #ffffff;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    color: #ffffff;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right:10px;
+  }
+
+  div{
+    color: white;
+  }
+  
+  @media (max-height: 500px) {
+    body {
+      min-height:800px;
+    }
+  }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="page-title">
+            Mentalista
+        </h1>
+        <p class="page-subtitle">
+            Digite um número de 0 a 10
+        </p>
+        <!--
+        <input type="text" name="" id="input"> <input type="button" value="Check" onclick="guess()" >
+
+        <div id="output" > RESPOSTA</div>
+        -->
+    </div>
+    <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+    </a>
+
+
+    <script>
+
+
+      var advNum = Math.floor(Math.random() * 10 + 1 );
+      var res = document.getElementById('output');
+      var chances = 3
+
+          while (chances >= 1){  
+            chances--
+            var guessed = parseInt(prompt('Digite um numero de 1 a 10'));
+            //var guessed = document.getElementById('input').value
+            if (guessed == advNum) {
+              alert('You guessed right! Congratulations!'); 
+              //res.innerHTML = ('You guessed right! Congratulations!') 
+            break;                              
+            } else if(chances == 0) {
+              alert('GAME OVER!!!    THE NUMBER WAS: ' + advNum)
+               //res.innerHTML = ('GAME OVER')
+            break;                                
+            } else if (guessed < advNum) { 
+              alert('Wrong!!! The number is greater than ' + guessed);
+              //res.innerHTML = ('Wrong!!! The number is greater than ' + guessed) 
+            } else if (guessed > advNum) {
+              alert('Wrong!!! The number is less than ' + guessed);
+              //res.innerHTML = ('Wrong!!! The number is less than ' + guessed)
+            }
+          }
+
+    </script>
+</body>
+
+</html>
