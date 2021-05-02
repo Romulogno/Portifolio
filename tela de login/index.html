@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/f25b6743fa.js" crossorigin="anonymous"></script>
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+        body{
+            background-color: black;
+            font-family: 'Open Sans Condensed', sans-serif;
+            
+        }
+        h2 {
+            font-weight: 200;
+            color: rgba(0, 0, 0, 0.493);
+            font-weight: 600;
+        }
+        
+        div#fora{
+            margin: auto;
+            border: 1px solid black;
+            width: 35%;
+            height: 550px;
+            border-radius: 5px;
+            background-color: yellow;
+            background-image: linear-gradient(to bottom right,rgba(211, 211, 85, 0.384), rgba(0, 255, 255, 0.911), pink);
+        }
+
+        div#dentro{
+            border-radius: 10px;
+            margin: 150px 100px;
+           
+            text-align: center;
+            padding: 20px 5px 10px 5px;
+            background-color: rgba(255, 255, 255, 0.432);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.112);
+        }
+        
+        input.inp{
+            display: block;
+            margin: auto;
+            border-radius: 5px;
+            width: 200px;
+            height: 35px;
+            margin-bottom: 20px;
+            text-align: center;
+            border: none;
+            background-color: rgba(255, 255, 255, 0.623);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.112);
+        }
+
+        input#login{
+            width: 150px;
+            height: 35px;
+            margin: auto;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: white;
+            background-color: rgba(64, 64, 172, 0.479);
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.112);
+            font-size: large;
+            border: none;
+            display: block;
+        }
+
+        input#login{
+            animation-name: lcolor;
+            animation-duration: 4s;
+            animation-timing-function: ;
+            animation-delay: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes lcolor{
+            0% {background-color:64, 64, 172, 0.479;}
+            25% {background-color:rgb(94, 94, 196);}
+            50%  {background-color:rgb(125, 146, 238);}
+            100%  {background-color:rgb(176, 141, 241);}
+
+        }
+
+        div#box{
+            margin-top: 15px;
+            margin-right: 110px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="fora">
+        <div id="dentro">
+            
+            <H2>Sing In </H2>
+            <form action="#">
+                <input class="inp" type="text" name="user" id="user" placeholder="USERNAME">
+               
+                <input class="inp" type="password" name="senha" id="senha" placeholder="PASSWORD"> 
+               
+                <input id="login" type="submit" value="LOGIN">
+
+                <div id="box">
+                    <input type="checkbox" class="check" name="check">
+                    <label for="check" class="check" >Remember me</label>
+                </div>
+                
+
+                
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
