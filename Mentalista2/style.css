@@ -1,0 +1,155 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Megrim&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+:root{
+    --MainFont:'Megrim', cursive;
+    --startFont:'Press Start 2P', cursive;
+    --GameOverFont:'Creepster', cursive;
+    --MainFont2:'Zen Dots', cursive;
+    --CheckFont:'Frijole', cursive;
+    --OutputFont:'Fredericka the Great', cursive;
+}
+
+
+body{
+    color: orange;
+    background-image:url(images/background2.jpg);
+    background-size:cover;
+  
+
+}
+
+h1{
+    font-family: var(--MainFont2);
+    text-align: center;
+    font-size: 50px;
+    
+}
+
+
+#start{
+    font-family: var(--startFont);
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 150px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.205);
+    color: white;
+    
+}
+
+.center{
+    margin: auto;
+    width: 200px;
+}
+
+#box{
+    width: 150px;
+    margin-left: 20px;
+    display: none;
+}
+
+input#guess{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    width: 75px;
+    height: 25px;
+    margin-left: 60px;
+    background-color: rgba(126, 118, 118, 0.158);
+    border: none;
+    -moz-appearance: textfield;
+    display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
+
+#life{
+    position: absolute;
+    margin-left: 25%;
+    font-size: 30px;
+    display: none;
+}
+
+#divCheck {
+    margin:20px auto;
+    width: 100px;
+    display: none;
+    
+}
+
+#check{
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    font-family: var(--CheckFont);
+    font-size: 20px;
+    background-color: rgba(158, 156, 156, 0.151);
+    
+}
+
+.return{
+    color:white;
+    text-align: center;
+    font-family: var(--OutputFont);
+    font-size: 25px;
+}
+
+.remove {
+    display:none;
+}
+
+.show {
+    display: unset;
+}
+
+.congrats{
+    font-size: 30px;
+    font-family: var(--startFont);
+    color: yellow;
+    text-align: center;
+}
+
+#restart{
+    font-family: var(--startFont);
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: 150px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.205);
+    color: white;
+    display: none;
+}
+
+#gameover{
+    font-family: var(--startFont);
+    color: rgba(255, 255, 255, 0.753);
+    font-size: 80px;
+    margin-top: 150px;
+    text-align: center;
+    display: none;
+}
+
+
+footer{
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 10px;
+}

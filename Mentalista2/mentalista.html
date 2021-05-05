@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1>Mentalist</h1>
+    <div class="center"><img id="box"src="images/box-mario.png" alt="box mario"></div>
+    <div class="center"><input type="number" id="guess"></div>
+    <div class="center"><input type="button" value="Start" id="start" onclick="start()"></div>
+    <h2 id="gameover">GAME OVER</h2>
+    <div id="life"></div>
+    <div id="divCheck"><button id="check">Check</button></div>
+    <p class="return" id="output" ></p>
+    <p id="output2"></p>
+
+    <div class="center"><input type="button" value="restart" id="restart" onclick="restart()"></div>
+
+    <footer>Developed by Romulo Oliveira</footer>
+
+    <script>
+
+        //give focus to input field
+        document.getElementById('guess').focus();
+
+        //event Listenner to button start
+        document.getElementById('check').addEventListener('click', guessNum);
+
+        //assigns a ramdom number 
+        var ramdomNum 
+        //number of lives left
+        var life
+
+        //hide the button start and shows the other elements of the game, also give focus to the input element
+        function start(){
+            life = 3
+            document.getElementById('start').setAttribute('class','remove');            
+            document.getElementById('box').style.display = 'block';
+            document.getElementById('guess').style.display = 'block';
+            document.getElementById('life').style.display = 'block';
+            document.getElementById('divCheck').style.display = 'block';
+            document.getElementById('gameover').style.display = 'none';
+            document.getElementById('restart').style.display = 'none';            
+            document.getElementById('guess').focus();
+            document.getElementById('life').innerHTML = '❤️❤️❤️';
+            ramdomNum = Math.floor(Math.random()*10 + 1);                           
+        }
+
+        function restart(){
+            life = 3 
+            document.getElementById('start').setAttribute('class','remove');            
+            document.getElementById('box').style.display = 'block';
+            document.getElementById('guess').style.display = 'block';
+            document.getElementById('life').style.display = 'block';
+            document.getElementById('divCheck').style.display = 'block';
+            document.getElementById('gameover').style.display = 'none';
+            document.getElementById('restart').style.display = 'none';
+            document.getElementById('output').innerHTML =''            
+            document.getElementById('guess').focus();
+            document.getElementById('guess').value = ''
+            document.getElementById('life').innerHTML = '❤️❤️❤️';
+            document.getElementById('output').setAttribute('class','return')
+            ramdomNum = Math.floor(Math.random()*10 + 1);
+
+               
+        }
+
+        function gameOver(){
+            document.getElementById('box').style.display = 'none';
+            document.getElementById('guess').style.display = 'none';
+            document.getElementById('life').style.display = 'none';
+            document.getElementById('divCheck').style.display = 'none';
+            document.getElementById('gameover').style.display = 'block';
+            document.getElementById('restart').style.display = 'block';
+            document.getElementById('output').innerHTML ='The right number was: ' + ramdomNum;
+
+        }
+
+        //function to evaluate the number guessed
+        function guessNum(){
+            var guessedNum = document.getElementById('guess').value;
+            var output = document.getElementById('output')
+            console.log(ramdomNum);
+            if (life > 0){
+                if(guessedNum <=0){
+                    alert('Please type a valid number')
+                } else {
+                    if (guessedNum == ramdomNum){
+                        output.innerHTML = 'Congratulations';
+                        output.setAttribute('class','congrats');
+                        document.getElementById('divCheck').style.display = 'none';
+                        document.getElementById('guess').style.display = 'none';
+                        document.getElementById('restart').style.display = 'block';
+
+                    } else if (guessedNum < ramdomNum) {
+                        output.innerHTML = 'The number Guessed is Greater than: ' + guessedNum;    
+                        life--
+                        switch(life){
+                            case 2:
+                            document.getElementById('life').innerHTML = '❤️❤️';
+                            break
+                            case 1:
+                            document.getElementById('life').innerHTML = '❤️';
+                            break 
+                            case 0:
+                            document.getElementById('life').innerHTML = '';
+                            gameOver()
+                            
+                            break
+                        }                    
+                    } else if (guessedNum > ramdomNum){
+                        output.innerHTML = 'The number Guessed is Lower than: ' + guessedNum;
+                        life--
+                        switch(life){
+                            case 2:
+                            document.getElementById('life').innerHTML = '❤️❤️';
+                            break
+                            case 1:
+                            document.getElementById('life').innerHTML = '❤️';
+                            break
+                            case 0:
+                            document.getElementById('life').innerHTML = '';
+                            gameOver()
+                            break   
+                        }
+                        
+                    }  
+                }
+                document.getElementById('guess').value = ''
+                document.getElementById('guess').focus();
+
+            }   else{
+                    document.getElementById('output').innerHTML =''
+                    document.getElementById('output2').innerHTML = 'Voce nao tem mais vidas'
+                }
+            
+        }
+
+     
+    </script>
+</body>
+</html>
