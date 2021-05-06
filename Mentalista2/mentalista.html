@@ -13,7 +13,7 @@
     <p id="explan">Guess a number between 1 and 10</p>
     <div id="life"></div>
     <div class="center"><img id="box"src="images/box-mario.png" alt="box mario"></div>
-    <div class="center"><input type="number" id="guess"></div>
+    <div class="center"><input type="number" id="guess" onkeyup="keydown(event)" ></div>
     <div class="center"><input type="button" value="Start" id="start" onclick="start()"></div>
     <h2 id="gameover">GAME OVER</h2>
     
@@ -30,6 +30,7 @@
         document.getElementById('guess').focus();
 
         //event Listenner to button start
+        //document.getElementById('check').addEventListener('click', guessNum);
         document.getElementById('check').addEventListener('click', guessNum);
 
         //assigns a ramdom number 
@@ -147,6 +148,14 @@
                     document.getElementById('output2').innerHTML = 'Voce nao tem mais vidas'
                 }
             
+        }
+
+        //checks if the enter button is pressed if yes it triggres the function guessNum
+        function keydown(event){
+            var x = event.which || event.keyCode;
+            if (x == 13){
+                guessNum()
+            }
         }
 
      
