@@ -18,6 +18,10 @@ body{
     color: orange;
     background-image:url(images/background2.jpg);
     background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 625px;
+    position: relative;
   
 
 }
@@ -26,7 +30,13 @@ h1{
     font-family: var(--MainFont2);
     text-align: center;
     font-size: 50px;
-    
+}
+
+p#explan{
+    font-family: var(--OutputFont);
+    color: white;
+    text-align: center;
+    display: none;
 }
 
 
@@ -79,10 +89,11 @@ input[type=number] {
 }
 
 #life{
-    position: absolute;
-    margin-left: 25%;
+    width: fit-content;
+    margin: auto;
     font-size: 30px;
     display: none;
+    text-align: center;
 }
 
 #divCheck {
@@ -130,7 +141,7 @@ input[type=number] {
     text-align: center;
     padding: 10px;
     width: 100%;
-    margin-top: 150px;
+    margin-top: 50px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.205);
     color: white;
@@ -141,7 +152,7 @@ input[type=number] {
     font-family: var(--startFont);
     color: rgba(255, 255, 255, 0.753);
     font-size: 80px;
-    margin-top: 150px;
+    margin-top: 100px;
     text-align: center;
     display: none;
 }
@@ -151,5 +162,25 @@ footer{
     text-align: center;
     position: fixed;
     width: 100%;
-    bottom: 10px;
+    bottom: 35px;
 }
+
+
+/* Mobile responsive*/
+
+@media only screen and (max-width: 600px) {
+
+.return{
+    font-size:18px ;
+}
+
+.congrats{
+    font-size: 20px;
+    font-family: var(--startFont);
+    color: yellow;
+    text-align: center;
+}
+
+
+
+} 

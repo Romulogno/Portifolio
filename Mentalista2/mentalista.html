@@ -10,16 +10,17 @@
 </head>
 <body>
     <h1>Mentalist</h1>
+    <p id="explan">Guess a number between 1 and 10</p>
+    <div id="life"></div>
     <div class="center"><img id="box"src="images/box-mario.png" alt="box mario"></div>
     <div class="center"><input type="number" id="guess"></div>
     <div class="center"><input type="button" value="Start" id="start" onclick="start()"></div>
     <h2 id="gameover">GAME OVER</h2>
-    <div id="life"></div>
+    
     <div id="divCheck"><button id="check">Check</button></div>
     <p class="return" id="output" ></p>
-    <p id="output2"></p>
 
-    <div class="center"><input type="button" value="restart" id="restart" onclick="restart()"></div>
+    <div class="center"><input type="button" value="restart" id="restart" onclick="start()"></div>
 
     <footer>Developed by Romulo Oliveira</footer>
 
@@ -37,9 +38,11 @@
         var life
 
         //hide the button start and shows the other elements of the game, also give focus to the input element
+       /*
         function start(){
             life = 3
-            document.getElementById('start').setAttribute('class','remove');            
+            document.getElementById('start').setAttribute('class','remove');
+            document.getElementById('explan').style.display = 'block';            
             document.getElementById('box').style.display = 'block';
             document.getElementById('guess').style.display = 'block';
             document.getElementById('life').style.display = 'block';
@@ -50,10 +53,12 @@
             document.getElementById('life').innerHTML = '❤️❤️❤️';
             ramdomNum = Math.floor(Math.random()*10 + 1);                           
         }
+        */
 
-        function restart(){
+        function start(){
             life = 3 
-            document.getElementById('start').setAttribute('class','remove');            
+            document.getElementById('start').setAttribute('class','remove');
+            document.getElementById('explan').style.display = 'block';            
             document.getElementById('box').style.display = 'block';
             document.getElementById('guess').style.display = 'block';
             document.getElementById('life').style.display = 'block';
@@ -72,6 +77,7 @@
 
         function gameOver(){
             document.getElementById('box').style.display = 'none';
+            document.getElementById('explan').style.display = 'none';
             document.getElementById('guess').style.display = 'none';
             document.getElementById('life').style.display = 'none';
             document.getElementById('divCheck').style.display = 'none';
@@ -86,8 +92,10 @@
             var guessedNum = document.getElementById('guess').value;
             var output = document.getElementById('output')
             console.log(ramdomNum);
+            //evaluate the number of tries left
             if (life > 0){
-                if(guessedNum <=0){
+                //evaluate if a valid number is being assign
+                if(guessedNum <=0 || guessedNum > 10){
                     alert('Please type a valid number')
                 } else {
                     if (guessedNum == ramdomNum){
