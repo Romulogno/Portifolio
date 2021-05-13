@@ -1,24 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Syne+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
+
 body{
-    background-color: lightgoldenrodyellow;
+    background-image: url(images/ampulheta2.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left;
+    font-family: 'Rubik', sans-serif;
+
 }
 
 h1{
+    font-family: 'Poiret One', cursive;
+    margin:20px auto;
     text-align: center;
+    color: rgb(228, 139, 173);
+    background-color: rgba(0, 0, 0, 0.534);
+    width: fit-content;
+    border-radius: 5px;
 }
 
 div.box{
-border: 1px solid black;
-height: 50px;
-width: 300px;
-margin: 50px auto;
+    color: rgb(228, 139, 173);
+    font-size: 40px;
+    padding: auto;
+    width: 200px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.884);
+    border-radius: 5px;
+}
+
+span{    
+    margin: auto;
+    padding: 5px;
 }
 
 div.button{
-    text-align: center;
+    text-align: center;    
 }
 
 button{
+    font-family: 'Poiret One', cursive;
     padding: 10px 30px;
-    margin: 10px;
+    margin: 30px 10px;
+    background-color: none;
+    font-family: 'Rubik';
+    font-size: 20px;
+    padding: 5px 10px;
+    background-color: rgba(24, 12, 24, 0.836);
+    border-radius: 5px;
+    color: rgb(228, 139, 173);
 }
 
