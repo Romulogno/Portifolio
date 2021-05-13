@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chronometer</title>
+    <link rel="stylesheet" href="style.css">
+    <script> 
+    
+    
+
+        var cc = 00;
+        var ss = 00;
+        var mm = 00;
+        var hh = 00;
+        var interval;
+
+        function start(){
+            clearInterval(interval);
+            interval = setInterval(cont, 10);      
+        }        
+
+        function stop(){
+            clearInterval(interval)
+        }
+
+        function reset(){
+        cc = 00;
+        ss = 00;
+        mm = 00;
+        hh = 00;
+        document.getElementById('cc').innerHTML = '00';
+        document.getElementById('ss').innerHTML = '00';
+        document.getElementById('mm').innerHTML = '00';
+        }
+
+        function cont (){
+            cc = ++cc          
+            if (cc <10 ){
+                document.getElementById('cc').innerHTML = '0' + cc;
+            } else{
+                document.getElementById('cc').innerHTML = cc;
+            }           
+            if (cc > 99){
+                cc = 0;
+                                
+                if (ss < 10){
+                 document.getElementById('ss').innerHTML = '0' + ss;
+                }else {
+                    document.getElementById('ss').innerHTML = ''+ ss;
+                }                              
+                ss = ++ss;
+            if (ss > 59) {
+             ss = 0;
+             mm = ++mm;                    
+                    if (mm < 10){
+                        document.getElementById('mm').innerHTML = '0'+ mm;
+                    } else {
+                        document.getElementById('mm').innerHTML = mm;
+                    }
+                                             
+            }
+        }
+    }
+
+        
+
+  
+
+       
+        
+    </script>
+
+</head>
+<body>
+    <h1>Chronometer in JavaScript</h1>
+    <div class="box"> <span id="mm">00</span>:<span id="ss">00</span>:<span id="cc">00</span></div>
+    <div class="button">
+        <button onclick="start()">Start</button>
+        <button onclick="stop()">Stop</button>
+        <button onclick="reset()">Reset</button>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,24 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+h1{
+    text-align: center;
+}
+
+div.box{
+border: 1px solid black;
+height: 50px;
+width: 300px;
+margin: 50px auto;
+}
+
+div.button{
+    text-align: center;
+}
+
+button{
+    padding: 10px 30px;
+    margin: 10px;
+}
+
