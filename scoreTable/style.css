@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+:root{
+    --font1:'Teko', sans-serif;
+    --font2:'Rajdhani', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+    background-image: url(imagens/beachball.jpg);
+    background-size: cover;
+    color:white;
+    font-family: var(--font2);
+}
+
+main{    
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+    margin:1vw 2vw;    
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+
+.bplus{
+    font-size: 10vw;
+    width: 12vw;
+    margin-bottom: 9vw;
+    border-radius: 15px;
+    background-color: rgba(193, 240, 25, 0.678);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+}
+.bplus:hover {
+    background-color: rgb(228, 188, 13, 0.678)
+    }
+
+.bplus:active {
+    background-color: rgb(228, 188, 13, 0.678);
+    transform: translateY(2px);
+}
+
+.bminus{
+    font-size: 5vw;
+    border-radius: 15px;
+    background-color: rgba(236, 213, 9, 0.699);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+}
+.bminus:hover {
+    background-color: rgba(236, 66, 44, 0.671);
+    }
+
+.bminus:active {
+    background-color: rgba(236, 66, 44, 0.671);
+    transform: translateY(2px);
+}
+
+.team{
+    line-height: 0.9;
+    text-align: center;
+    height: 45vw;
+    margin: 0 1vw;
+    text-shadow: 1px 1px 2px black;
+    background-color: rgba(0, 0, 0, 0.219);
+    border-radius: 5px;
+}
+
+.pTeam{
+    font-size: 7vw;
+    font-weight: 500;
+    margin-bottom: 5vw;
+    margin-top: 2vw;
+    
+}
+
+.pScore{
+    font-size: 7vw;
+    margin: 5vw 0;
+}
+
+.score{
+    font-size: 21vw;
+    margin: 2vw 0;
+}
+
+.setPoint{
+    font-size: 5vw;
+    text-align: center;
+    margin: 5vw 2vw ;
+    text-shadow: 1px 1px 2px black;
+}
+
+.setPoint button {
+    color: blue;
+    font-size: 5vw;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(240, 243, 53, 0.836);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.500);
+}
+
+.setPoint button:hover {
+    background-color: rgba(240, 243, 53, 0.836);
+    }
+
+.setPoint button:active {
+    background-color: rgba(240, 243, 53, 0.836);
+    transform: translateY(2px);
+}
+
+#reset {
+    font-size: 5vw;
+    text-align: center;
+}
+
+#reset button{
+    color: yellow;
+    font-size: 5vw;
+    width: 21vw;
+    border-radius: 10px;
+    background-color: rgba(6, 15, 36, 0.774);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.500);
+    
+}
+
+#reset button:hover {
+    background-color: rgba(33, 77, 170, 0.836);
+    }
+
+    #reset button:active {
+    background-color: rgba(33, 77, 170, 0.836);
+    transform: translateY(2px);
+}
