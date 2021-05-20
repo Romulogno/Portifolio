@@ -35,11 +35,13 @@ main{
 .bplus{
     font-size: 10vw;
     width: 12vw;
+    margin-top: 10vw;
     margin-bottom: 9vw;
     border-radius: 15px;
     background-color: rgba(193, 240, 25, 0.678);
     border-style: none;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+    border: solid 3px rgb(29, 20, 17);
 }
 /*
 .bplus:hover {
@@ -58,6 +60,7 @@ main{
     background-color: rgba(236, 213, 9, 0.699);
     border-style: none;
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+    border: solid 3px rgb(29, 20, 17);
 }
 /*
 .bminus:hover {
@@ -73,30 +76,31 @@ main{
 .team{
     line-height: 0.9;
     text-align: center;
-    height: 45vw;
+    height: 37vw;
     width: 25vw;
-    margin: 0 1vw;
+    margin: 5vw 1vw 0vw 1vw;
     text-shadow: 1px 1px 2px black;
-    background-color: rgba(0, 0, 0, 0.219);
+    background-color: rgba(146, 103, 103, 0.219);
     border-radius: 5px;
+    border: solid 3px rgba(29, 20, 17, 0.247);
 }
 
 .pTeam{
     font-size: 7vw;
     font-weight: 500;
-    margin-bottom: 5vw;
+    margin-bottom: 3vw;
     margin-top: 2vw;
     
 }
 
 .pScore{
     font-size: 7vw;
-    margin: 5vw 0;
+    margin: 2vw 0;
 }
 
 .score{
     font-size: 21vw;
-    margin: 2vw 0;
+    margin: 1vw 0;
 }
 
 .setPoint{
@@ -133,11 +137,11 @@ main{
 
 #reset button{
     color: yellow;
-    font-size: 5vw;
-    width: 21vw;
+    font-size: 3vw;
+    width: 16vw;
+    border: solid 3px rgb(29, 20, 17);
     border-radius: 10px;
     background-color: rgba(6, 15, 36, 0.774);
-    border-style: none;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.500);
     text-shadow: 2px 2px 2px black;
     
@@ -156,4 +160,215 @@ main{
 footer{
     text-align: center;
     text-shadow: 1px 1px 1px black;
+}
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 550px) {
+
+
+  body {
+    background-image: url(imagens/beachballCutMedium.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .team {
+    margin:20vw 3vw;  
+    display: block;
+    font-size: 15vw ;
+    height: 65vw;
+    width: 45vw;
+  }
+
+  .pTeam{
+      font-size: 13vw;
+  }
+  .pScore{
+      font-size: 10vw;
+  }
+
+  .score{
+      font-size: 37vw;
+  }
+
+  .buttons {
+    position:absolute;
+    display: flex;
+    margin-top: 130vw;
+    align-items: flex-end;
+  }
+  #secButton1{
+    width: 50%;
+
+    
+  }
+  #secButton2{
+    width: 50%;
+    margin-left: 50%;
+    }
+
+
+  #bplus1 {
+    margin: auto;
+    font-size: 20vw;
+    width: 25vw;
+  }
+ 
+  #bminus1 {
+    margin: 5vw auto;
+    font-size: 15vw;
+    width: 15vw;
+
+  }
+  
+  #bplus2{
+    margin: auto;
+    font-size: 20vw;
+    width: 25vw;
+
+  }
+
+  #bminus2{
+    margin: 5vw auto;
+    font-size: 15vw;
+    width: 15vw;
+  }
+  
+  #reset{
+    position: fixed;
+    width: 100%;
+    bottom: 60px;
+  }
+
+  footer{
+    position: fixed;
+    width: 100%;
+    bottom: 5vw;
+  }
+
+  .setPoint{
+      display: none;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    body {
+        background-image: url(imagens/beachballCutMedium.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .team {
+        
+    }
+
+    body {
+        background-image: url(imagens/beachballCutMedium.jpg);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+
+      #reset{
+        position: fixed;
+        width: 100%;
+        bottom: 150px;
+      }
+    
+      footer{
+        position: fixed;
+        width: 100%;
+        bottom: 5vw;
+      }
+    
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .team{
+      color:orange;
+  }
+
+  main {
+    justify-content: center;
+}
+
+  body{
+    background-image: url(imagens/beachball.jpg);
+    background-size: cover;
+    color:white;
+    font-family: var(--font2);
+}
+
+.bplus{
+    font-size: 7vw;
+    width: 9vw;
+    margin-top: 10vw;
+    margin-bottom: 9vw;
+    border-radius: 15px;
+    background-color: rgba(193, 240, 25, 0.678);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+    border: solid 3px rgb(29, 20, 17);
+}
+
+.bminus{
+    font-size: 5vw;
+    width: 5vw;
+    margin: auto;
+    border-radius: 15px;
+    background-color: rgba(236, 213, 9, 0.699);
+    border-style: none;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.400);
+    border: solid 3px rgb(29, 20, 17);
+}
+
+.team{
+    justify-content: center;
+    height: 30vw;
+    width: 20vw;
+}
+.pTeam{
+    font-size: 5vw;
+}
+.pScore{
+    font-size: 5vw;
+}
+
+.score{
+    font-size: 16vw;
+}
+
+#reset{
+    position: fixed;
+    width: 100%;
+    bottom: 60px;
+  }
+#reset button{
+    width: 10vw;
+    font-size: 2vw;
+}  
+
+  footer{
+    position: fixed;
+    width: 100%;
+    bottom: 2vw;
+  }
+
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  
+   
 }
