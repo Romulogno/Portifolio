@@ -6,42 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Score Table</title>
+    <script src="score.js"></script>
 </head>
 <body>    
         <main>
             <section class="buttons">
-                <button class="bplus">+</button>
-                <button class="bminus">-</button>
+                <button class="bplus" id="bplus1" onclick="plus(1)">+</button>
+                <button class="bminus" onclick="minus(1)">-</button>
             </section>
             <section class="team">
                 <p class="pTeam">TEAM 1</p>
             <P class="pScore">SCORE</P>
-            <DIV class="score">00</DIV>
+            <DIV class="score" id="score1">00</DIV>
             
             </section>
         <aside class="setPoint">
             <p>SET</p>
-            <div>0</div>
-            <button>+</button>            
+            <div id="set1">0</div>
+            <button onclick="set(1)">+</button>            
         </aside>
         <aside class="setPoint">
             <p>SET</p>
-            <div>0</div>
-            <button>+</button>
+            <div id="set2">0</div>
+            <button onclick="set(2)">+</button>
             </aside>
         <section class="team">
             <p class="pTeam">TEAM 2</p>
             <P class="pScore">SCORE</P>
-            <DIV class="score">00</DIV>
+            <DIV class="score" id="score2">00</DIV>
         </section>
         <section class="buttons">
-            <button class="bplus">+</button>
-            <button class="bminus">-</button>
+            <button class="bplus" id="bplus2" onclick="plus(2)">+</button>
+            <button class="bminus" onclick="minus(2)">-</button>
         </section>
          </main>
 
         <section id="reset" >
-            <button>RESET</button>
-        </section>   
+            <button onclick="reset()">RESET</button>
+        </section>  
+        <footer>Developed by Romulo Oliveira</footer> 
 </body>
 </html>
