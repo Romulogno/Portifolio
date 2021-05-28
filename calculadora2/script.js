@@ -43,3 +43,150 @@ function changeMode(){
 
   
 }
+
+var typed = '';
+var firstNum = '';
+var secondNum = '';
+var total;
+var equacao = ''
+var temp = ''
+
+function ac(){
+    document.getElementById('display').innerHTML ='0'
+    typed = '';
+    firstNum = '';
+    secondNum = '';
+    total = 0;
+    equacao = '';
+}
+
+function display(key){
+    typed += key
+    document.getElementById('display').innerHTML = typed;
+    console.log('Typed = '+typed);
+}
+
+function plus(){
+    equacao = '+'
+    if (firstNum == ''){
+        firstNum = typed;
+        typed = '';
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);
+    }else{
+        secondNum = typed;
+        total = parseInt(firstNum) + parseInt(secondNum);
+        firstNum = total;
+        typed = '';
+        document.getElementById('display').innerHTML = total;
+        secondNum = ''
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);
+        
+    }
+}
+
+function minus(){
+    
+            equacao = '-'
+        if (firstNum == ''){
+            firstNum = typed;
+            typed = '';
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }else{
+            secondNum = typed;
+            temp = secondNum;
+            total = parseInt(firstNum) - parseInt(secondNum);
+            firstNum = total;
+            typed = '';
+            document.getElementById('display').innerHTML = total;
+            secondNum = 0
+            console.log('Typed = '+ typed);
+            console.log('secondNum = '+ secondNum);
+            console.log('FirstNum = '+ firstNum); 
+        }
+        
+}
+
+function split(){
+    equacao = '/'
+    if (firstNum == ''){
+        firstNum = typed;
+        typed = '';
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);
+    }else{
+        secondNum = typed;
+        total = parseInt(firstNum) / parseInt(secondNum);
+        firstNum = total;
+        typed = '';
+        document.getElementById('display').innerHTML = total.toFixed(5);
+        secondNum = ''
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);
+    }
+}
+
+function multiply(){
+    equacao = 'x'
+    if (firstNum == ''){
+        firstNum = typed;
+        typed = '';
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);
+    }else{
+        secondNum = typed;
+        total = parseInt(firstNum) * parseInt(secondNum);
+        firstNum = total;
+        typed = '';
+        document.getElementById('display').innerHTML = total;
+        secondNum = ''
+        console.log('Typed = '+ typed);
+        console.log('FirstNum = '+ firstNum);
+        console.log('secondNum = '+ secondNum);       
+    }
+}
+
+
+function result(){
+    if (firstNum =='' && secondNum == ''){
+        document.getElementById('display').innerHTML = 'vazio'
+        } else {
+            if (equacao == '+'){
+            secondNum = typed;
+            total = parseInt(firstNum) + parseInt(secondNum);
+            firstNum = total;
+            secondNum = ''
+            document.getElementById('display').innerHTML = total;
+        } else if (equacao == '-'){
+            secondNum = typed;
+            total = parseInt(firstNum) - parseInt(secondNum);
+            firstNum = total;
+            secondNum = ''
+            document.getElementById('display').innerHTML = total;
+        } else if (equacao == '/') {
+            secondNum = typed;
+            total = parseInt(firstNum) / parseInt(secondNum);
+            firstNum = total;
+            secondNum =''
+            document.getElementById('display').innerHTML = total.toFixed(5);
+        } else if (equacao == 'x'){
+            secondNum = typed;
+            total = parseInt(firstNum) * parseInt(secondNum);
+            firstNum = total;
+            secondNum =''
+            document.getElementById('display').innerHTML = total;
+        }
+
+
+    }
+    
+    
+}

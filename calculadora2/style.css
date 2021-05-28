@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgb(255, 153, 0);
+    background-color: lightblue;
 }
 .main-container{
     background-color: rgb(34, 33, 33);
@@ -22,7 +22,7 @@ body{
     width: 100%;
     height: 35%;
     border-radius: 25px;
-    font-size: 50pt;
+    font-size: 30pt;
     justify-content: flex-end;
     align-items: flex-end;
 }
@@ -33,6 +33,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     margin: 50px 20px;
+    
 }
 
 .grid-container{
@@ -101,8 +102,8 @@ body{
   .toggle-btn
 {
     position: relative;
-    width: 145px;
-    height: 74px;
+    width: 104px;
+    height: 40px;
     margin: 0 auto;
     border-radius: 40px;
 }
@@ -131,7 +132,7 @@ input[type="checkbox"]
     left: 0px;
     overflow: hidden;
     opacity: 1;
-    background-color: #fff;
+    background-color:#fff;
     box-shadow: 0px 2px 25px #d9d9d9;
     border-radius: 40px;
     transition: 0.2s ease background-color, 0.2s ease opacity;
@@ -141,9 +142,9 @@ input[type="checkbox"]
 {
     content: '';
     position: absolute;
-    top: 8px;
-    width: 58px;
-    height: 58px;
+    top: 4px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     transition: 0.5s ease transform, 0.2s ease background-color;
 }
@@ -175,13 +176,13 @@ input[type="checkbox"]
 #_1st-toggle-btn input[type="checkbox"]:checked + span:before
 {
     background-color: #000;
-    transform: translate(56px,-19px);
+    transform: translate(53px,-6px);
 }
 
 #_1st-toggle-btn input[type="checkbox"]:checked + span:after
 {
     background-color: #fff;
-    transform: translate(79px,0px);
+    transform: translate(64px,0px);
 }
 
 /* button end */
