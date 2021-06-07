@@ -48,8 +48,10 @@ var typed = '';
 var firstNum = '';
 var secondNum = '';
 var total;
-var equacao = ''
+var equacao = '';
+var tempEquacao = '';
 var temp = ''
+var porcento = 0;
 
 function ac(){
     document.getElementById('display').innerHTML ='0'
@@ -67,30 +69,39 @@ function display(key){
 }
 
 function plus(){
-    equacao = '+'
-    if (firstNum == ''){
-        firstNum = typed;
-        typed = '';
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);
-    }else{
-        secondNum = typed;
-        total = parseInt(firstNum) + parseInt(secondNum);
-        firstNum = total;
-        typed = '';
-        document.getElementById('display').innerHTML = total;
-        secondNum = ''
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);
-        
+    if (typed == ''){
+        equacao = '+'
+        tempEquacao ='+'
+    } else{
+        equacao = '+'
+        tempEquacao ='+'
+        if (firstNum == ''){
+            firstNum = typed;
+            typed = '';
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }else{
+            secondNum = typed;
+            total = parseInt(firstNum) + parseInt(secondNum);
+            firstNum = total;
+            typed = '';
+            document.getElementById('display').innerHTML = total;
+            secondNum = ''
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }
     }
 }
 
 function minus(){
-    
+    if (typed == ''){
+        equacao = '-'
+        tempEquacao ='-'
+    } else{
             equacao = '-'
+            tempEquacao ='-'
         if (firstNum == ''){
             firstNum = typed;
             typed = '';
@@ -109,48 +120,56 @@ function minus(){
             console.log('secondNum = '+ secondNum);
             console.log('FirstNum = '+ firstNum); 
         }
-        
+    }        
 }
 
 function split(){
-    equacao = '/'
-    if (firstNum == ''){
-        firstNum = typed;
-        typed = '';
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);
-    }else{
-        secondNum = typed;
-        total = parseInt(firstNum) / parseInt(secondNum);
-        firstNum = total;
-        typed = '';
-        document.getElementById('display').innerHTML = total.toFixed(5);
-        secondNum = ''
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);
+    if (typed == ''){
+        equacao = '/'
+        } else{
+        equacao = '/'
+        if (firstNum == ''){
+            firstNum = typed;
+            typed = '';
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }else{
+            secondNum = typed;
+            total = parseInt(firstNum) / parseInt(secondNum);
+            firstNum = total;
+            typed = '';
+            document.getElementById('display').innerHTML = total.toFixed(5);
+            secondNum = ''
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }
     }
 }
 
 function multiply(){
-    equacao = 'x'
-    if (firstNum == ''){
-        firstNum = typed;
-        typed = '';
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);
-    }else{
-        secondNum = typed;
-        total = parseInt(firstNum) * parseInt(secondNum);
-        firstNum = total;
-        typed = '';
-        document.getElementById('display').innerHTML = total;
-        secondNum = ''
-        console.log('Typed = '+ typed);
-        console.log('FirstNum = '+ firstNum);
-        console.log('secondNum = '+ secondNum);       
+    if (typed == ''){
+        equacao = 'x'
+    } else{
+        equacao = 'x'
+        if (firstNum == ''){
+            firstNum = typed;
+            typed = '';
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);
+        }else{
+            secondNum = typed;
+            total = parseInt(firstNum) * parseInt(secondNum);
+            firstNum = total;
+            typed = '';
+            document.getElementById('display').innerHTML = total;
+            secondNum = ''
+            console.log('Typed = '+ typed);
+            console.log('FirstNum = '+ firstNum);
+            console.log('secondNum = '+ secondNum);       
+        }
     }
 }
 
@@ -183,10 +202,40 @@ function result(){
             firstNum = total;
             secondNum =''
             document.getElementById('display').innerHTML = total;
-        }
-
-
+        } else if (equacao == '%'){
+            if (tempEquacao == '-'){
+                total = parseInt(firstNum) - parseInt(porcento);
+                firstNum = total;
+                secondNum =''
+                document.getElementById('display').innerHTML = total;
+                typed = ''
+            }else if (tempEquacao == '+'){
+                total = parseInt(firstNum) + parseInt(porcento);
+                firstNum = total;
+                secondNum =''
+                document.getElementById('display').innerHTML = total;
+                typed = ''
+            } else if (tempEquacao == '/'){
+                total = parseInt(firstNum) + parseInt(porcento);
+                firstNum = total;
+                secondNum =''
+                document.getElementById('display').innerHTML = total;
+                typed = ''
+            } else if (tempEquacao == 'x'){
+                total = parseInt(firstNum) + parseInt(porcento);
+                firstNum = total;
+                secondNum =''
+                document.getElementById('display').innerHTML = total;
+                typed = ''
+            }             
+        } 
     }
-    
-    
 }
+
+function percent(){
+        equacao = '%'
+        secondNum = typed;
+        porcento = (secondNum/100) * firstNum;
+        console.log('porcento: ' + porcento);
+        document.getElementById('display').innerHTML = porcento;
+    }   

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/icones/favicon-32x32.png" type="image/x-icon">
     <title>Calculator</title>
     <script src="script.js"></script>
 </head>
@@ -20,7 +21,7 @@
            <div class="button" id="btn2">
                <p>+/-</p>
            </div>
-           <div class="button" id="btn3">
+           <div class="button" id="btn3" onclick="percent()">
                <p>%</p>
            </div>
            <div class="button simbol" id="btn4" onclick="split()">
@@ -65,7 +66,7 @@
            <div class="button number"  id="btn17" onclick="display(0)">
                <p>0</p>
            </div>
-           <div class="button" id="btn18">
+           <div class="button" id="btn18" onclick="display('.')">
                <p>.</p>
            </div>
            <div class="button simbol"  id="btn19" onclick="result()">
@@ -78,6 +79,7 @@
         <span></span>
       </div>
 
+     
 
     
 </body>
