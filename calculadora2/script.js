@@ -173,7 +173,6 @@ function multiply(){
     }
 }
 
-
 function result(){
     if (firstNum =='' && secondNum == ''){
         document.getElementById('display').innerHTML = 'vazio'
@@ -183,24 +182,28 @@ function result(){
             total = parseInt(firstNum) + parseInt(secondNum);
             firstNum = total;
             secondNum = ''
+            typed = ''
             document.getElementById('display').innerHTML = total;
         } else if (equacao == '-'){
             secondNum = typed;
             total = parseInt(firstNum) - parseInt(secondNum);
             firstNum = total;
             secondNum = ''
+            typed = ''
             document.getElementById('display').innerHTML = total;
         } else if (equacao == '/') {
             secondNum = typed;
             total = parseInt(firstNum) / parseInt(secondNum);
             firstNum = total;
             secondNum =''
+            typed = ''
             document.getElementById('display').innerHTML = total.toFixed(5);
         } else if (equacao == 'x'){
             secondNum = typed;
             total = parseInt(firstNum) * parseInt(secondNum);
             firstNum = total;
             secondNum =''
+            typed = ''
             document.getElementById('display').innerHTML = total;
         } else if (equacao == '%'){
             if (tempEquacao == '-'){
@@ -239,3 +242,135 @@ function percent(){
         console.log('porcento: ' + porcento);
         document.getElementById('display').innerHTML = porcento;
     }   
+
+function keydown(event){
+    var x = event.which || event.keyCode;
+    switch (x){
+        case 96:
+            typed += '0';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 97:
+            typed += '1';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 98:
+            typed += '2';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 99:
+            typed += '3';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 100:
+            typed += '4';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 101:
+            typed += '5';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 102:
+            typed += '6';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 103:
+            typed += '7';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 104:
+            typed += '8';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 105:
+            typed += '9';
+            document.getElementById('display').innerHTML = typed;
+            console.log('Typed = '+typed);
+        break;
+        case 107:
+            plus()
+        break;
+        case 109:
+            minus()
+        break;
+        case 106:
+            multiply()
+        break;
+        case 111:
+            split()
+        break;
+        case 13:
+            result()
+        break;
+        case 27:
+            ac()
+        break;    
+    }
+
+
+    /*
+    if (x == 97){
+        typed += '1'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 98){
+        typed += '2'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 99){
+        typed += '3'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 100){
+        typed += '4'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 101){
+        typed += '5'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 102){
+        typed += '6'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 103){
+        typed += '7'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 104){
+        typed += '8'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 105){
+        typed += '9'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    } else if(x == 96){
+        typed += '0'
+        document.getElementById('display').innerHTML = typed;
+        console.log('Typed = '+typed);
+    }else if(x == 107){
+        plus()
+    }else if(x == 109){
+        minus()
+    }else if(x == 111){
+        split()
+    }else if(x == 106){
+        multiply()
+    }
+     else if(x == 13){
+        result();
+    } else if(x == 27){
+        ac()
+    }
+    */
+}
