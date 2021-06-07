@@ -44,6 +44,7 @@ function changeMode(){
   
 }
 
+//Global variables to be accessed for all the functions
 var typed = '';
 var firstNum = '';
 var secondNum = '';
@@ -53,6 +54,8 @@ var tempEquacao = '';
 var temp = ''
 var porcento = 0;
 
+
+//Resets the variables and Display values
 function ac(){
     document.getElementById('display').innerHTML ='0'
     typed = '';
@@ -62,12 +65,14 @@ function ac(){
     equacao = '';
 }
 
+//Store and display the keys pressed in string format to by converted later
 function display(key){
     typed += key
     document.getElementById('display').innerHTML = typed;
     console.log('Typed = '+typed);
 }
 
+//Plus calculation function
 function plus(){
     if (typed == ''){
         equacao = '+'
@@ -95,6 +100,7 @@ function plus(){
     }
 }
 
+//Minus calculation function
 function minus(){
     if (typed == ''){
         equacao = '-'
@@ -123,6 +129,7 @@ function minus(){
     }        
 }
 
+//Division calculation Function
 function split(){
     if (typed == ''){
         equacao = '/'
@@ -148,6 +155,7 @@ function split(){
     }
 }
 
+//Multiply  calculation function
 function multiply(){
     if (typed == ''){
         equacao = 'x'
@@ -173,6 +181,7 @@ function multiply(){
     }
 }
 
+//Calculates the final result  = 
 function result(){
     if (firstNum =='' && secondNum == ''){
         document.getElementById('display').innerHTML = 'vazio'
@@ -235,6 +244,7 @@ function result(){
     }
 }
 
+//Calculates the percentage
 function percent(){
         equacao = '%'
         secondNum = typed;
@@ -243,6 +253,7 @@ function percent(){
         document.getElementById('display').innerHTML = porcento;
     }   
 
+//Allows us to use the keyboard keys to type the numbers of our calculation
 function keydown(event){
     var x = event.which || event.keyCode;
     switch (x){
@@ -374,3 +385,32 @@ function keydown(event){
     }
     */
 }
+
+// Changes the number to positive or negative number.
+function abs(){
+    if (typed =='' && total == ''){
+        document.getElementById('display').innerHTML = '0';
+    } else {
+        if (total !=''){
+            var myAbs = parseInt(total);
+            if (myAbs >= 0){
+               total = '-'+ total;
+                console.log(total);
+                document.getElementById('display').innerHTML = total;
+            } else {
+                total = Math.abs(myAbs);
+                document.getElementById('display').innerHTML = total;
+            }
+        }else {
+                 var myAbs = parseInt(typed);
+            if (myAbs >= 0){
+                typed = '-'+ typed;
+                console.log(typed);
+                document.getElementById('display').innerHTML = typed;
+            } else {
+                typed = Math.abs(myAbs);
+                document.getElementById('display').innerHTML = typed;
+            }
+        }
+    }   
+  }
