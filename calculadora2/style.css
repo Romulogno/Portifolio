@@ -33,7 +33,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     margin: 50px 20px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 .grid-container{
