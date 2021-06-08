@@ -183,7 +183,7 @@ function multiply(){
 
 //Calculates the final result  = 
 function result(){
-    if (firstNum =='' && secondNum == ''){
+    if (firstNum =='' && secondNum == '') {
         document.getElementById('display').innerHTML = 'vazio'
         } else {
             if (equacao == '+'){

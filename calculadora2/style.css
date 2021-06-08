@@ -33,7 +33,7 @@ body{
     justify-content: flex-end;
     align-items: flex-end;
     margin: 50px 20px;
-    
+    overflow: scroll;
 }
 
 .grid-container{
@@ -95,8 +95,20 @@ body{
       background-color: lightblue;
     }
   }
+ /*Media query for small displays*/
+  @media only screen and (max-width: 320px) {
+    .main-container {
+        height: 512px;
+    }
+    .display {
+        height: 25%;
+    }
+    .display div {
+        margin: 13px 20px;
+    }
 
 
+  }
   
   /* Botao day and night*/
   .toggle-btn
@@ -142,7 +154,7 @@ input[type="checkbox"]
 {
     content: '';
     position: absolute;
-    top: 4px;
+    top: 5px;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -176,13 +188,13 @@ input[type="checkbox"]
 #_1st-toggle-btn input[type="checkbox"]:checked + span:before
 {
     background-color: #000;
-    transform: translate(53px,-6px);
+    transform: translate(51px,-3px);
 }
 
 #_1st-toggle-btn input[type="checkbox"]:checked + span:after
 {
     background-color: #fff;
-    transform: translate(64px,0px);
+    transform: translate(63px,0px);
 }
 
 /* button end */
